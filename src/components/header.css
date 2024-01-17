@@ -29,17 +29,19 @@
     font-size: 1.8rem;
     font-family: 'Bebas Neue', sans-serif;  
     list-style: none;
+    transition: 250ms;
+}
+
+.header li:hover{
+    padding-top: 5px;
 }
 
 .header a{
     color: white;
     text-decoration: none;
     transition: 250ms;
-    padding: 10px;
-    border-radius: 5px;
 }
 
 .header a:hover{
-   background-color: white;
-   color: black;
+    color: rgb(201, 132, 3);
 }

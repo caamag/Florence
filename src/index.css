@@ -8,3 +8,60 @@ html{
     scroll-behavior: smooth;
     font-family: 'Oswald', sans-serif;
 }
+
+body{
+    background-image: url(./pages/assets/initial-image.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+.container{
+    width: 100%;
+    overflow: hidden;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.line{
+    width: 80px;
+    height: 2px;
+    background-color: rgb(168, 168, 168);
+    margin-top: 40px;
+    margin-left: 25%;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+/*--------animations--------*/
+
+@keyframes titleEffect {
+    0%{
+        opacity: 0;
+        margin-right: 300px;
+    }
+    100%{
+        opacity: 1;
+        margin-right: 0px;
+    }
+}
+
+/*querys*/
+@media screen and (max-width: 950px){
+    body{
+        background-size: 180%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body{
+        background-size: 280%;
+    }
+}

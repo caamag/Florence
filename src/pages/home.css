@@ -1,22 +1,13 @@
 
-.container{
-    width: 100%;
-    overflow: hidden;
-}
-
 .presentation{
     width: 100%;
     height: 100vh;
-    background-image: url(./assets/initial-image.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: 'Bebas Neue', sans-serif; 
+    margin-top: -160px;
 }
 
 .presentation h2{ 
@@ -24,7 +15,9 @@
     font-size: 5rem;
     line-height: 45px;
     letter-spacing: 3px;
-    margin-top: 60px;
+    margin-top: 100px;
+    animation: titleEffect 2000ms;
+    animation-delay: 500ms;
 }
 
 .presentation span{
@@ -35,19 +28,210 @@
     font-size: 1.4rem;
     color: white;
     margin-top: 10px;
+    animation: titleEffect 2000ms;
+    animation-delay: 750ms;
 }
 
 .presentation a{
-    color: white;
     margin-top: 40px;
     padding: 20px 40px;
     border: solid 1px rgb(201, 132, 3);
     font-size: 1.8rem;
-    text-decoration: none;
+    transition: 250ms;
+    animation: titleEffect 2000ms;
+    animation-delay: 500ms;
+}
+
+.presentation a:hover, .service-content a:hover{
+    background-color: rgb(181, 118, 0);
+    font-weight: 100;
+}
+
+/*video container*/
+.video-container{
+    width: 100%;
+    height: 80vh;
+    background-color: rgb(47, 47, 47);
+    display: flex;
+}
+
+.video-content, .service-content{
+    width: 50%;
+    height: 100%;
+    font-family: 'Bebas Neue', sans-serif; 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.video-content h2, .service-content h2{
+    color: white;
+    font-size: 5rem;
+    line-height: 45px;
+    letter-spacing: 3px; 
+    margin-left: 25%;
+}
+
+.video-content span, .service-content span{
+    color: rgb(201, 132, 3);
+}
+
+.video-content p, .service-content p{
+    margin-left: 25%;
+    margin-top: 40px;
+    color: rgb(168, 168, 168);
+    font-size: 1.4rem;
+    font-weight: 100;
+    letter-spacing: 1px;
+    width: 60%;
+    text-indent: 10px;
+}
+
+.video-presentation{
+    width: 50%;
+    height: 100%;
+    background-image: url(./assets/tatuando.jpg);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
     transition: 250ms;
 }
 
-.presentation a:hover{
-    background-color: rgb(181, 118, 0);
-    font-weight: 100;
+.video-presentation:hover{
+    background-size: 120%;
+}
+
+.video-presentation button{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.video-presentation button img{
+    width: 30px;
+    height: 30px;
+    padding: 20px;
+    border: 2px solid rgb(3, 99, 201);
+    border-radius: 5px;
+    filter: invert(100%);
+    transition: 250ms;
+}
+
+.video-presentation button img:hover{
+    background-color: rgb(3, 99, 201);
+}
+
+/*services container*/
+.services-container{
+    width: 100%;
+    height: 80vh;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: rgb(36, 36, 36);
+    display: flex;
+}
+
+.service-content a{
+    width: 100px;
+    margin-left: 25%;
+    margin-top: 20px;
+    padding: 20px 40px;
+    border: solid 1px rgb(201, 132, 3);
+    font-size: 1.8rem;
+    transition: 250ms;
+}
+
+.service-cards{
+    width: 46%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 50%;
+    height: 50%;
+    background-image: url(./assets/tatuando.jpg);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 250ms;
+}
+
+.card:hover{
+    background-size: 105%;
+}
+
+.card a{
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+    text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif; 
+    transition: 250ms;
+}
+
+.card a:hover{
+    scale: 1.1;
+    color: rgb(201, 132, 3);
+}
+
+
+
+
+
+
+/*querys*/
+@media screen and (max-width: 900px) {
+    .video-presentation{
+        background-size: 150%;
+    }
+    .video-presentation:hover{
+        background-size: 155%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .video-container{
+        flex-direction: column;
+        height: 120vh;
+    }
+    .services-container{
+        flex-direction: column-reverse;
+        height: 120vh;
+    }
+
+    .video-presentation, .video-content, 
+    .service-content, .service-cards{
+        width: 80%;
+        height: 48%;
+        margin: 0 auto;
+        align-items: center;
+    }
+    .video-content p, .video-content h2, .video-content .line,
+    .service-content p, .service-content h2, .service-content .line{
+        margin-left: 0%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .video-content h2, .service-content h2{
+        font-size: 3rem;
+        line-height: 30px;
+    }
+    .video-content p, .service-content p{
+        width: 80%;
+    }
+    .services-container{
+        padding-bottom: 50px;
+        padding-top: 0px;
+    }
+    .card{
+        background-size: 120%;
+    }
 }

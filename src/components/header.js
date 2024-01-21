@@ -3,9 +3,6 @@ import './header.css';
 
 import { NavLink } from 'react-router-dom';
 
-//nav
-import Navbar from './navbar';
-
 function Header () {
 
     return <div className='header'>
